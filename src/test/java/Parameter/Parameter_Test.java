@@ -11,7 +11,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Parameter_Test 
 {
-	public WebDriver driver;
+	WebDriver driver;
 	
 	//@BeforeMethod
 	@Test
@@ -25,7 +25,7 @@ public class Parameter_Test
 			WebDriverManager.chromedriver();
 			driver= new ChromeDriver();
 		}
-		else if (browser.equalsIgnoreCase("edge")) 
+		else if(browser.equalsIgnoreCase("edge")) 
 		{
 			driver = new EdgeDriver();	
 		}
