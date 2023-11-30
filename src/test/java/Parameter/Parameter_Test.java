@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 
 public class Parameter_Test 
 {
-	public static WebDriver driver;
+	public WebDriver driver;
 	
 	//@BeforeMethod
 	@Test
@@ -20,6 +20,7 @@ public class Parameter_Test
 		
 		if (browser.equalsIgnoreCase("chrome")) 
 		{
+			
 			driver= new ChromeDriver();
 		}
 		else if (browser.equalsIgnoreCase("edge")) 
