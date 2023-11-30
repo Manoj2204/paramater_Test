@@ -5,7 +5,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 public class Parameter_Test 
@@ -13,7 +12,7 @@ public class Parameter_Test
 	public WebDriver driver;
 	
 	@BeforeMethod
-	public void config_BeforeMethod()
+	public void BeforeMethod()
 	{
 		String browser = System.getProperty("browser");
 		String url = System.getProperty("url");
@@ -30,7 +29,7 @@ public class Parameter_Test
 	}
 	
 	@AfterMethod
-	public void config_AfterMethod()
+	public void AfterMethod()
 	{
 		driver.manage().window().minimize();
 		driver.close();
