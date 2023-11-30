@@ -16,7 +16,7 @@ public class Parameter_Test
 	public void BeforeMethod()
 	{
 		String browser = System.getProperty("browser");
-		String url = System.getProperty("url");
+		String URL = System.getProperty("url");
 		
 		if (browser.equalsIgnoreCase("chrome")) 
 		{
@@ -26,7 +26,7 @@ public class Parameter_Test
 		{
 			driver = new EdgeDriver();	
 		}
-		driver.get(url);
+		driver.get(URL);
 		driver.manage().window().maximize();
 		String title = driver.getTitle();
 		System.out.println(title);
