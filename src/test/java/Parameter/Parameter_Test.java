@@ -11,10 +11,12 @@ import org.testng.annotations.Test;
 public class Parameter_Test 
 {
 	public WebDriver driver;
-	@Parameters({"browser","url"})
+	
 	@BeforeMethod
-	public void config_BeforeMethod(String browser, String url)
+	public void config_BeforeMethod()
 	{
+		String browser = System.getProperty("browser");
+		String url = System.getProperty("url");
 		if (browser.equalsIgnoreCase("chrome")) 
 		{
 			driver= new ChromeDriver();
