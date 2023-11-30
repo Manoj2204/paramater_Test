@@ -12,35 +12,36 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class Parameter_Test 
 {
 	WebDriver driver;
-	
-	//@BeforeMethod
-	@Test
-	public void BeforeMethod()
-	{
+
+	@BeforeMethod
+	public void BeforeMethod() {
 		String browser = System.getProperty("Browser");
 		String url = System.getProperty("Url");
-		
+
 		if (browser.equalsIgnoreCase("chrome")) 
 		{
-			WebDriverManager.chromedriver();
-			driver= new ChromeDriver();
-		}
-		else if(browser.equalsIgnoreCase("edge")) 
+			WebDriverManager.chromedriver().setup();
+			driver = new ChromeDriver();
+		} else if (browser.equalsIgnoreCase("edge")) 
 		{
-			driver = new EdgeDriver();	
+			driver = new EdgeDriver();
 		}
 		driver.get(url);
-		driver.manage().window().maximize();
+		
+
+	}
+
+	@AfterMethod
+	public void AfterMethod() {
+		driver.manage().window().minimize();
+		driver.close();
+	}
+
+	@Test
+	public void test() 
+	{
 		String title = driver.getTitle();
 		System.out.println(title);
-		
 	}
-	
-	/*
-	 * @AfterMethod public void AfterMethod() { driver.manage().window().minimize();
-	 * driver.close(); }
-	 * 
-	 * @Test public void test() { String title = driver.getTitle();
-	 * System.out.println(title); }
-	 */
+
 }
