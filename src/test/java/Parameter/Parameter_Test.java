@@ -11,11 +11,13 @@ public class Parameter_Test
 {
 	public WebDriver driver;
 	
-	@BeforeMethod
+	//@BeforeMethod
+	@Test
 	public void BeforeMethod()
 	{
 		String browser = System.getProperty("browser");
 		String url = System.getProperty("url");
+		
 		if (browser.equalsIgnoreCase("chrome")) 
 		{
 			driver= new ChromeDriver();
@@ -26,20 +28,16 @@ public class Parameter_Test
 		}
 		driver.get(url);
 		driver.manage().window().maximize();
-	}
-	
-	@AfterMethod
-	public void AfterMethod()
-	{
-		driver.manage().window().minimize();
-		driver.close();
-	}
-	
-	@Test
-	public void test()
-	{
 		String title = driver.getTitle();
 		System.out.println(title);
+		
 	}
-
+	
+	/*
+	 * @AfterMethod public void AfterMethod() { driver.manage().window().minimize();
+	 * driver.close(); }
+	 * 
+	 * @Test public void test() { String title = driver.getTitle();
+	 * System.out.println(title); }
+	 */
 }
