@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 
 public class Parameter_Test 
 {
-	public WebDriver driver;
+	public static WebDriver driver;
 	
 	//@BeforeMethod
 	@Test
